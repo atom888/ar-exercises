@@ -8,3 +8,11 @@ puts "Exercise 5"
 puts "----------"
 
 # Your code goes here ...
+@total_revenue = Store.pluck(:annual_revenue).sum
+@average_revenue = @total_revenue / Store.count
+@mil_revenue_stores = Store.where("annual_revenue > ?", 1000000).count
+
+
+pp @total_revenue
+pp @average_revenue
+pp @mil_revenue_stores
